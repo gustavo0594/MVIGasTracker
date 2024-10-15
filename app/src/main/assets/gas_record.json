@@ -1,0 +1,92 @@
+[
+  {
+    "date": "2024-02-18",
+    "kilometers": 36638,
+    "totalPayment": 28800
+  },
+  {
+    "date": "2024-02-27",
+    "kilometers": 37185,
+    "totalPayment": 28000
+  },
+  {
+    "date": "2024-03-05",
+    "kilometers": 37853,
+    "totalPayment": 34000
+  },
+  {
+    "date": "2024-03-21",
+    "kilometers": 38404,
+    "totalPayment": 32900
+  },
+  {
+    "date": "2024-04-04",
+    "kilometers": 38878,
+    "totalPayment": 28102
+  },
+  {
+    "date": "2024-04-16",
+    "kilometers": 39440,
+    "totalPayment": 34910
+  },
+  {
+    "date": "2024-05-02",
+    "kilometers": 39959,
+    "totalPayment": 31326
+  },
+  {
+    "date": "2024-05-16",
+    "kilometers": 40529,
+    "totalPayment": 33526
+  },
+  {
+    "date": "2024-05-31",
+    "kilometers": 41087,
+    "totalPayment": 33302
+  },
+  {
+    "date": "2024-06-11",
+    "kilometers": 41608,
+    "totalPayment": 31278
+  },
+  {
+    "date": "2024-06-25",
+    "kilometers": 42195,
+    "totalPayment": 34700
+  },
+  {
+    "date": "2024-07-18",
+    "kilometers": 42774,
+    "totalPayment": 34615
+  },
+  {
+    "date": "2024-07-31",
+    "kilometers": 43328,
+    "totalPayment": 33268
+  },
+  {
+    "date": "2024-08-15",
+    "kilometers": 43900,
+    "totalPayment": 40000
+  },
+  {
+    "date": "2024-08-30",
+    "kilometers": 44638,
+    "totalPayment": 20000
+  },
+  {
+    "date": "2024-09-03",
+    "kilometers": 44919,
+    "totalPayment": 32341
+  },
+  {
+    "date": "2024-09-16",
+    "kilometers": 45486,
+    "totalPayment": 33270
+  },
+  {
+    "date": "2024-09-26",
+    "kilometers": 46009,
+    "totalPayment": 33251
+  }
+]

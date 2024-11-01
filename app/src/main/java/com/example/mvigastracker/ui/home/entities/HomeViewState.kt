@@ -5,7 +5,7 @@ data class HomeViewState(
     val distanceChartData: HomeChart,
     val lastFuelUp: UIFuelUp?,
     val recentFuelUps: List<UIFuelUp>,
-    val yearlyReport: UIYearlyReport,
+    val annualReport: UIAnnualReport,
 )
 
 data class UIFuelUp(
@@ -14,7 +14,7 @@ data class UIFuelUp(
     val totalAmount: String,
 )
 
-data class UIYearlyReport(
+data class UIAnnualReport(
     val totalDistance: String,
     val differenceFromLastEntry: String,
     val totalAmount: String,

@@ -7,7 +7,7 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.mvigastracker.data.db.entities.GasRecordEntity
 import com.example.mvigastracker.data.db.entities.MonthlyValuesEntity
-import com.example.mvigastracker.data.db.entities.YearlyReportEntity
+import com.example.mvigastracker.data.db.entities.AnnualReportEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -53,11 +53,11 @@ WITH DistanceDifference AS(
         LIMIT 1
 )
 
-Select (MAX(kilometers) - MIN(kilometers))  as totalKilometers, SUM(totalPayment) as totalPayment, (SUM(totalPayment)/(MAX(kilometers) - MIN(kilometers))) as paymentPerKm, (Select * from DistanceDifference ) AS distanceDifference
+Select (MAX(kilometers) - MIN(kilometers))  as totalKilometers, SUM(totalPayment) as totalPayment, (SUM(totalPayment)/(MAX(kilometers) - MIN(kilometers))) as paymentPerKm, (Select * from DistanceDifference ) AS distanceDifference,  SUM(totalPayment)  / Count(distinct(strftime('%Y-%m', recordDate))) as paymentPerMonth
 FROM gas_record
 WHERE strftime('%Y', recordDate) = :year
     """
     )
-    fun getYearlyReport(year: String): Flow<YearlyReportEntity>
+    fun getAnnualReport(year: String): Flow<AnnualReportEntity>
 
 }

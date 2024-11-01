@@ -1,8 +1,9 @@
 package com.example.mvigastracker.data.db.entities
 
-data class YearlyReportEntity(
+data class AnnualReportEntity(
     val totalKilometers: Int,
     val totalPayment: Int,
     val paymentPerKm: Int,
-    val distanceDifference: Int
+    val distanceDifference: Int,
+    val paymentPerMonth: Int
 )

@@ -6,12 +6,12 @@ import com.example.mvigastracker.core.toMonthStringRes
 import com.example.mvigastracker.domain.entities.FuelMonthlyValue
 import com.example.mvigastracker.domain.entities.GasRecord
 import com.example.mvigastracker.domain.entities.HomeData
-import com.example.mvigastracker.domain.entities.YearlyReport
+import com.example.mvigastracker.domain.entities.AnnualReport
 import com.example.mvigastracker.ui.home.entities.HomeChart
 import com.example.mvigastracker.ui.home.entities.HomeChartItem
 import com.example.mvigastracker.ui.home.entities.HomeViewState
 import com.example.mvigastracker.ui.home.entities.UIFuelUp
-import com.example.mvigastracker.ui.home.entities.UIYearlyReport
+import com.example.mvigastracker.ui.home.entities.UIAnnualReport
 
 fun HomeData.toViewState(): HomeViewState =
     HomeViewState(
@@ -19,7 +19,7 @@ fun HomeData.toViewState(): HomeViewState =
         distanceChartData = monthlyRecordsByYear.toDistanceChart(),
         lastFuelUp = recentFuelUps.lastOrNull()?.toUIFuelUp(),
         recentFuelUps = recentFuelUps.map { it.toUIFuelUp() },
-        yearlyReport = yearlyReport.toUI(),
+        annualReport = annualReport.toUI(),
     )
 
 
@@ -70,10 +70,10 @@ private fun GasRecord.toUIFuelUp(): UIFuelUp =
         totalAmount = totalPayment.currencyFormat()
     )
 
-private fun YearlyReport.toUI(): UIYearlyReport =
-    UIYearlyReport(
+private fun AnnualReport.toUI(): UIAnnualReport =
+    UIAnnualReport(
         totalDistance = "$totalKilometers km",
         differenceFromLastEntry = "+ $distanceDifference from last entry",
         totalAmount = totalPayment.currencyFormat(),
-        paymentPerKm = "$paymentPerKm per km"
+        paymentPerKm = "$paymentPerKm per km / $paymentPerMonth by Month"
     )

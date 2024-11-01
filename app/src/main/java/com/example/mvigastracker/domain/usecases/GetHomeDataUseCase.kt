@@ -13,11 +13,11 @@ class GetHomeDataUseCase @Inject constructor(
     operator fun invoke(input: GetHomeDataUseCaseInput): Flow<HomeData> =
         zip(
             gasRecordRepository.getPaymentByMonth(input.year),
-            gasRecordRepository.getYearlyReport(input.year),
+            gasRecordRepository.getAnnualReport(input.year),
             gasRecordRepository.getAllByYear(input.year)
         ) { paymentsByMonth, yearlyReport, gasRecords ->
             HomeData(
-                yearlyReport = yearlyReport,
+                annualReport = yearlyReport,
                 recentFuelUps = gasRecords.takeLast(3),
                 monthlyRecordsByYear = paymentsByMonth,
             )

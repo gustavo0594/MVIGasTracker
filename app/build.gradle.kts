@@ -69,7 +69,6 @@ dependencies {
     implementation(libs.kg.charpose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.android.navigation)
-    implementation("io.github.bytebeats:compose-charts:0.2.1")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -5,7 +5,7 @@ import com.example.mvigastracker.data.mappers.toEntity
 import com.example.mvigastracker.data.mappers.toRecord
 import com.example.mvigastracker.domain.entities.FuelMonthlyValue
 import com.example.mvigastracker.domain.entities.GasRecord
-import com.example.mvigastracker.domain.entities.YearlyReport
+import com.example.mvigastracker.domain.entities.AnnualReport
 import com.example.mvigastracker.domain.repositories.GasRecordRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -38,7 +38,7 @@ class GasRecordRepositoryImp @Inject constructor(
         gasRecordDao.getPaymentCostByMonth(year)
             .map { items -> items.map { it.toRecord() } }
 
-    override fun getYearlyReport(year: String): Flow<YearlyReport> =
-        gasRecordDao.getYearlyReport(year)
+    override fun getAnnualReport(year: String): Flow<AnnualReport> =
+        gasRecordDao.getAnnualReport(year)
             .map { result -> result.toRecord() }
 }

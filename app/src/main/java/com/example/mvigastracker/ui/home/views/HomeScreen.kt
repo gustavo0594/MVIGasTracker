@@ -1,6 +1,5 @@
 package com.example.mvigastracker.ui.home.views
 
-import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -58,11 +57,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mvigastracker.ui.base.SIDE_EFFECTS_KEY
-import com.example.mvigastracker.ui.uicore.emptyscreen.EmptyScreen
 import com.example.mvigastracker.ui.home.contracts.HomeContract
 import com.example.mvigastracker.ui.home.entities.HomeChart
 import com.example.mvigastracker.ui.home.entities.HomeViewState
 import com.example.mvigastracker.ui.home.entities.UIFuelUp
+import com.example.mvigastracker.ui.uicore.emptyscreen.EmptyScreen
 import com.example.mvigastracker.ui.uicore.error.ErrorScreen
 import com.example.mvigastracker.ui.uicore.loading.LoadingScreen
 import com.example.mvigastracker.ui.yearpicker.YearPickerDialog
@@ -162,15 +161,15 @@ private fun Home(
                 modifier = Modifier.weight(1f),
                 title = "Total Distance",
                 painter = rememberVectorPainter(Icons.Default.CheckCircle),
-                value = homeViewState.yearlyReport.totalDistance,
-                subValue = homeViewState.yearlyReport.differenceFromLastEntry
+                value = homeViewState.annualReport.totalDistance,
+                subValue = homeViewState.annualReport.differenceFromLastEntry
             )
             RecordValueCard(
                 modifier = Modifier.weight(1f),
                 title = "Total Payment",
                 painter = rememberVectorPainter(Icons.Default.CheckCircle),
-                value = homeViewState.yearlyReport.totalAmount,
-                subValue = homeViewState.yearlyReport.paymentPerKm
+                value = homeViewState.annualReport.totalAmount,
+                subValue = homeViewState.annualReport.paymentPerKm
             )
         }
         homeViewState.lastFuelUp?.let { LatestStateCard(it) }
